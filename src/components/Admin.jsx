@@ -75,7 +75,7 @@ export function Admin() {
     if (!window.confirm('Confirmar exclusão deste post?')) return
     setError(null)
     try {
-      const resp = await fetch(`${apiBase}/posts/${id}`, {
+      const resp = await fetch(`${apiBase}posts/${id}`, {
         method: 'DELETE'
       })
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
