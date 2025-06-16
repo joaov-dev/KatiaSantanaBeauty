@@ -3,48 +3,85 @@ import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Servicos.module.css'
 
-import lashImg   from '../assets/LashLifting.png'
-import hairImg   from '../assets/ExtensaoCilios.png'
-import makeupImg from '../assets/makeup.png'
+import alongamentoUnhas   from '../assets/alongamentoUnhas.png'
+import BanhoGel   from '../assets/BanhoGel.png'
+import manicurePedicure from '../assets/manicurePedicure.png'
+import spadospes from '../assets/spadospes.png'
+import ExtensaoCilios from '../assets/ExtensaoCilios.png'
+import browLamination from '../assets/browLamination.png'
+import microblading from '../assets/microblading.png'
+import maquiagem from '../assets/maquiagem.png'
+import depilacaoFacial from '../assets/depilacaoFacial.png'
+import limpezaPele from '../assets/limpezaPele.png'
 
 export function Servicos() {
   // agora incluindo o campo `id`, que deve bater com a rota
   const services = [
     {
-      id: 'lash-lifting',
-      src: lashImg,
-      title: 'Lash Lifting & Design',
-      desc: 'Realce natural com curvatura e definição dos fios, sem precisar de extensão.'
+      id: 'AlongamentodeUnhas',
+      src: alongamentoUnhas,
+      title: 'Alongamento de Unhas',
+      desc: 'Diga adeus às unhas quebradiças e frágeis! É a escolha perfeita para quem quer estar sempre pronta para qualquer ocasião, com unhas belas e resistentes.'
     },
     {
-      id: 'hair-styling',
-      src: hairImg,
-      title: 'Hair Styling',
-      desc: 'Alisamento, modelagem e finalização com técnicas que valorizam seu tipo de cabelo.'
+      id: 'BanhodeGel',
+      src: BanhoGel,
+      title: 'Banho de Gel',
+      desc: 'O banho de gel é um tratamento ideal para fortalecer as unhas naturais, promovendo brilho e resistência sem a necessidade de alongamento.'
     },
     {
-      id: 'makeup-studio',
-      src: makeupImg,
-      title: 'Makeup Studio Look',
-      desc: 'Realce sua beleza com uma maquiagem sob medida para cada ocasião.'
+      id: 'ManicurePedicure',
+      src: manicurePedicure,
+      title: 'Manicure e Pedicure',
+      desc: 'Nossos serviços tradicionais de manicure e pedicure oferecem remoção de cutículas, lixamento, hidratação e esmaltação, com atenção a cada detalhe para garantir conforto, higiene e beleza.'
+    }, 
+    {
+      id: 'SpadosPes',
+      src: spadospes,
+      title: 'Spa dos Pés',
+      desc: 'O Spa dos Pés é um momento de relaxamento completo. O tratamento inclui esfoliação, hidratação profunda, massagem e remoção de calosidades, proporcionando alívio imediato para o cansaço dos pés.'
     },
     {
-      id: 'lash-lifting2',
-      src: lashImg,
-      title: 'Lash Lifting & Design',
-      desc: 'Realce natural com curvatura e definição dos fios, sem precisar de extensão.'
+      id: 'ExtensaodeCilios',
+      src: ExtensaoCilios,
+      title: 'Extensão de Cílios',
+      desc: 'Destaque seu olhar com elegância e praticidade. A extensão de cílios proporciona volume, curvatura e definição, eliminando a necessidade diária de máscara.'
     },
     {
-      id: 'hair-styling2',
-      src: hairImg,
-      title: 'Hair Styling',
-      desc: 'Alisamento, modelagem e finalização com técnicas que valorizam seu tipo de cabelo.'
+      id: 'BrowLamination',
+      src: browLamination,
+      title: 'Brow Lamination',
+      desc: 'Aposte em sobrancelhas perfeitamente alinhadas com o efeito lifting natural. A Brow Lamination modela os fios para criar volume, definição e simetria, sem a necessidade de maquiagem diária.'
     },
     {
-      id: 'makeup-studio2',
-      src: makeupImg,
-      title: 'Makeup Studio Look',
-      desc: 'Realce sua beleza com uma maquiagem sob medida para cada ocasião.'
+      id: 'MicrobladingMicropigmentação',
+      src: microblading,
+      title: 'Microblading e Micropigmentação',
+      desc: 'Sobrancelhas feitas com arte, técnica e propósito. Através do microblading ou da micropigmentação, desenhamos fios ultrarrealistas e personalizados, corrigindo falhas, preenchendo espaços e definindo o contorno ideal para o seu rosto.'
+    },
+    {
+      id: 'Maquiagem',
+      src: maquiagem,
+      title: 'Maquiagem',
+      desc: 'Beleza sob medida para você. Nossa maquiagem social é feita com produtos de alta performance, respeitando seu estilo e realçando seus traços únicos.'
+    },
+    {
+      id: 'DepilacaoFacial',
+      src: depilacaoFacial,
+      title: 'Depilação Facial',
+      desc: 'Livre-se dos pelos com suavidade e precisão. A depilação facial proporciona pele lisa, macia e com toque sedoso, com técnicas que respeitam a sensibilidade da sua pele.'
+    },
+    {
+      id: 'LimpezadePele',
+      src: limpezaPele,
+      title: 'Limpeza de Pele',
+      desc: 'Para uma pele saudável, fresca e luminosa. A limpeza de pele remove impurezas, cravos e células mortas, desobstruindo os poros e revitalizando o tecido cutâneo.'
+    },
+    {
+      id: 'DesigndeSobrancelhas',
+      src: browLamination,
+      title: 'Design de Sobrancelhas',
+      desc: 'O design de sobrancelhas é feito com atenção ao formato do seu rosto, corrigindo falhas, valorizando seu olhar e realçando sua beleza natural.'
     },
   ]
 

@@ -3,25 +3,31 @@
   import { Card } from './Card'
   import styles from './Carrosel.module.css'
 
-  import lashImg from '../assets/LashLifting.png'
-  import ExtCilios from '../assets/ExtensaoCilios.png'
-  import esmaltacao from '../assets/esmaltacao.png'
-  import makeup from '../assets/makeup.png'
-  import makeupGlam from '../assets/makeupGlam.png'
+import alongamentoUnhas   from '../assets/alongamentoUnhas.png'
+import BanhoGel   from '../assets/BanhoGel.png'
+import manicurePedicure from '../assets/manicurePedicure.png'
+import spadospes from '../assets/spadospes.png'
+import ExtensaoCilios from '../assets/ExtensaoCilios.png'
+import browLamination from '../assets/browLamination.png'
+import microblading from '../assets/microblading.png'
+import maquiagem from '../assets/maquiagem.png'
+import depilacaoFacial from '../assets/depilacaoFacial.png'
+import limpezaPele from '../assets/limpezaPele.png'
   // importe as outras 3 imagens aqui…
 
   export function Carrosel() {
     const services = [
-      { src: lashImg,    title: 'Lash Lifting' },
-      { src: ExtCilios,  title: 'Extensão de Cilios' },
-      { src: esmaltacao,  title: 'Esmaltação' },
-      { src: makeup,  title: 'MakeUp' },
-      { src: makeupGlam,  title: 'MakeUp Glam' },
-      { src: lashImg,    title: 'Lash Lifting' },
-      { src: ExtCilios,  title: 'Extensão de Cilios' },
-      { src: esmaltacao,  title: 'Esmaltação' },
-      { src: makeup,  title: 'MakeUp' },
-      { src: makeupGlam,  title: 'MakeUp Glam' },
+      { src: alongamentoUnhas,    title: 'Alongamento de Unhas' },
+      { src: BanhoGel,  title: 'Banho de Gel' },
+      { src: manicurePedicure,  title: 'Manicure e Pedicure' },
+      { src: spadospes,  title: 'Spa dos Pés' },
+      { src: ExtensaoCilios,  title: 'Extensão de Cílios' },
+      { src: browLamination,    title: 'Brow Lamination' },
+      { src: microblading,  title: 'Microblading e Micropigmentação' },
+      { src: maquiagem,  title: 'Maquiagem' },
+      { src: depilacaoFacial,  title: 'Depilação Facial' },
+      { src: limpezaPele,  title: 'Limpeza de Pele' },
+      { src: microblading,  title: 'Design de Sobrancelhas' },
     ]
     const containerRef = useRef(null)
 
