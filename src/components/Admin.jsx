@@ -1,7 +1,7 @@
 // src/components/Admin.jsx
 import React, { useState, useEffect } from 'react'
-import styles           from './Admin.module.css'
-import katiaAvatar      from '../assets/katia.png'
+import styles      from './Admin.module.css'
+import katiaAvatar from '../assets/katia.png'
 
 export function Admin() {
   const [contentText, setContentText] = useState('')
@@ -16,6 +16,9 @@ export function Admin() {
     role:      'Esteticista & Empreendedora'
   }
 
+  // Base URL da API (em .env ou fallback para localhost)
+  const apiBase = 'https://katiasantanbeautyapi-production.up.railway.app/api/'
+
   // carrega lista de posts ao montar
   useEffect(() => {
     fetchPosts()
@@ -23,7 +26,8 @@ export function Admin() {
 
   function fetchPosts() {
     setLoading(true)
-    fetch('http://localhost:8080/api/posts')
+    setError(null)
+    fetch(`${apiBase}/posts`)
       .then(res => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`)
         return res.json()
@@ -48,10 +52,11 @@ export function Admin() {
 
   async function handleSubmit(e) {
     e.preventDefault()
+    if (!contentText.trim()) return
     setSubmitting(true)
     setError(null)
     try {
-      const resp = await fetch('http://localhost:8080/api/posts', {
+      const resp = await fetch(`${apiBase}/posts`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ content: contentText.trim() })
@@ -68,8 +73,9 @@ export function Admin() {
 
   async function handleDelete(id) {
     if (!window.confirm('Confirmar exclusão deste post?')) return
+    setError(null)
     try {
-      const resp = await fetch(`http://localhost:8080/api/posts/${id}`, {
+      const resp = await fetch(`${apiBase}/posts/${id}`, {
         method: 'DELETE'
       })
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
@@ -113,6 +119,7 @@ export function Admin() {
       <hr />
 
       <h2>Posts existentes</h2>
+
       {loading ? (
         <p>Carregando posts…</p>
       ) : (

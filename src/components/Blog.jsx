@@ -1,3 +1,4 @@
+// src/components/Blog.jsx
 import React, { useEffect, useState } from 'react'
 import { Post }          from './Post.jsx'
 import { Sidebar }       from './Sidebar.jsx'
@@ -16,14 +17,14 @@ export function Blog() {
   }
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/posts')
+    const apiUrl = 'https://katiasantanbeautyapi-production.up.railway.app/api/'
+    fetch(`${apiUrl}/posts`)
       .then(res => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`)
         return res.json()
       })
       .then(data => {
         const withAuthorAndContentArray = data.map(p => {
-          // Converte a string p.content em um array de parágrafos
           const lines = typeof p.content === 'string'
             ? p.content
                 .split('\n')
@@ -51,7 +52,7 @@ export function Blog() {
     return (
       <div className={styles.wrapper}>
         <Sidebar />
-        <main>Carregando posts…</main>
+        <main className={styles.loading}>Carregando posts…</main>
       </div>
     )
   }
