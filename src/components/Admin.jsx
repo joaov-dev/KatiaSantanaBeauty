@@ -27,7 +27,7 @@ export function Admin() {
   function fetchPosts() {
     setLoading(true)
     setError(null)
-    fetch(`${apiBase}/posts`)
+    fetch(`${apiBase}posts`)
       .then(res => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`)
         return res.json()
@@ -56,7 +56,7 @@ export function Admin() {
     setSubmitting(true)
     setError(null)
     try {
-      const resp = await fetch(`${apiBase}/posts`, {
+      const resp = await fetch(`${apiBase}posts`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ content: contentText.trim() })

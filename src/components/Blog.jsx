@@ -18,7 +18,7 @@ export function Blog() {
 
   useEffect(() => {
     const apiUrl = 'https://katiasantanbeautyapi-production.up.railway.app/api/'
-    fetch(`${apiUrl}/posts`)
+    fetch(`${apiUrl}posts`)
       .then(res => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`)
         return res.json()
