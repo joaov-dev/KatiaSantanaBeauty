@@ -10,7 +10,7 @@ import { About }    from './components/About'
 import { Cursos }    from './components/Cursos'
 import { ServiceDescription }    from './components/ServiceDescription'
 import { CursosDescription }    from './components/CursosDescription'
-import { Blog } from './components/blog'
+import { Blog } from './components/Blog'
 import { Admin }          from './components/Admin'
 import { PostsProvider }  from './contexts/PostsContext'
 
