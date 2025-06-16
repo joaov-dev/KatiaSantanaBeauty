@@ -1,0 +1,202 @@
+/* ServiceDescription.module.css */
+
+:root {
+  --header-height: 80px;
+  --carousel-offset: calc(
+    var(--header-height)    /* altura do header */
+    + 2rem                  /* padding-top da .wrapper */
+    + 2rem                  /* padding-bottom implícito */
+    + 1.5rem                /* margin-bottom da .heading */
+  );
+}
+
+/* 1) Wrapper geral */
+.wrapper {
+  padding-top: var(--header-height);
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+/* 2) Título */
+.heading {
+  font-family: 'newsreader', serif;
+  font-size: 2.25rem;
+  text-align: center;
+  margin: 0 0 1.5rem;
+}
+
+/* 3) Grid 10% | 80% | 10% */
+.carousel {
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  align-items: center;    /* vertical */
+  justify-items: center;  /* horizontal centering das setas */
+  gap: 1rem;
+}
+
+/* 4) Botões de seta */
+.arrow {
+  border: none;
+  background: rgba(255,255,255,0.8);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* 5) Área central: imagem 30% + texto 70% */
+.content {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  gap: 2rem;
+}
+
+/* 6) Caixa da imagem */
+.imageBox {
+  /* altura ajustada em desktop/tablet via media query */
+}
+.imageBox img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1rem;
+  display: block;
+}
+
+/* 7) Caixa de texto */
+.textBox {
+  background: var(--pink-100);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.textBox h3 {
+  margin: 0 0 1rem;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+/* 8) Descrição */
+.description p {
+  margin: 0 0 1rem;
+  line-height: 1.6;
+}
+.description strong {
+  display: block;
+  margin: 1rem 0 0.5rem;
+}
+.description li {
+  margin-left: 1.5rem;
+  list-style-type: disc;
+  margin-bottom: 0.5rem;
+}
+
+/* 9) Botões finais */
+.buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.book {
+  background: var(--pink-800);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+.contact {
+  background: #fff;
+  color: var(--black);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ===== Responsividade ===== */
+
+/* Desktop & Tablet: imagem ocupa toda a altura restante da viewport,
+   e .textBox espaça títulos, conteúdo e botões verticalmente */
+@media (min-width: 769px) {
+  .imageBox {
+    height: calc(95vh - var(--carousel-offset));
+  }
+  .imageBox img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .textBox {
+    justify-content: space-between;
+  }
+}
+
+/* Tablet (≤1024px): empilha conteúdo */
+@media (max-width: 1024px) {
+  .heading {
+    font-size: 2rem;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .textBox {
+    padding: 1.5rem;
+  }
+  .textBox h3 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Mobile (≤768px): ajustes gerais */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  /* 8% | 84% | 8% para setas e conteúdo */
+  .carousel {
+    grid-template-columns: 5% 80% 5%;
+  }
+  /* conteúdo empilhado */
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  /* imagem mais estreita */
+  .imageBox {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  .imageBox img {
+    width: 100%;
+    height: auto;
+  }
+  /* seta menor */
+  .arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+  /* texto e botões */
+  .textBox {
+    padding: 1rem;
+    justify-content: flex-start;
+  }
+  .textBox h3 {
+    font-size: 1.5rem;
+  }
+}

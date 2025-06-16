@@ -1,0 +1,99 @@
+:root {
+  --card-gap: 1rem;
+}
+
+/* wrapper em 3 colunas: seta | centro (título+carousel) | seta */
+.carouselWrapper {
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 0;
+  box-sizing: border-box;
+}
+
+/* containers das setas */
+.arrowContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* botoões de navegação */
+.arrow {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: rgba(255,255,255,0.8);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* agrupa o heading e o viewport */
+.viewportWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* o título acima do carousel */
+.heading {
+  font-family: 'newsreader', sans-serif;
+  font-size: 1.75rem;
+  margin: 0 0 1rem;
+  color: var(--black);
+  text-align: center;
+  font-weight: 500;
+}
+
+/* viewport propriamente dita */
+.viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* linha de cards scrollable */
+.cardsContainer {
+  display: flex;
+  gap: var(--card-gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 0.5rem;
+}
+
+/* esconde scrollbar */
+.cardsContainer::-webkit-scrollbar { display: none; }
+.cardsContainer { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* largura responsiva dos cards (5 sempre) */
+.cardsContainer > * {
+  flex: 0 0 calc((100% - 4 * var(--card-gap)) / 5);
+  max-width: calc((100% - 4 * var(--card-gap)) / 5);
+  scroll-snap-align: start;
+}
+
+/* breakpoint para 4 cards (tablet) */
+@media (max-width: 1024px) {
+  .cardsContainer > * {
+    flex: 0 0 calc((100% - 3 * var(--card-gap)) / 4);
+    max-width: calc((100% - 3 * var(--card-gap)) / 4);
+  }
+}
+
+/* breakpoint para 3 cards (mobile) */
+@media (max-width: 768px) {
+  .cardsContainer > * {
+    flex: 0 0 calc((100% - 2 * var(--card-gap)) / 3);
+    max-width: calc((100% - 2 * var(--card-gap)) / 3);
+  }
+
+  .carouselWrapper {
+    padding: 0;
+  }
+}

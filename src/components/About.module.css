@@ -1,0 +1,124 @@
+/* components/About.module.css */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.heading {
+  font-family: 'newsreader', serif;
+  font-size: 2.5rem;
+  text-align: center;
+	font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+/* === Primeiro container: foto + bio === */
+.profile {
+  display: grid;
+  /* trocar 1fr 2fr por 1fr 1fr (50% / 50%) */
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+/* ...restante igual... */
+.photo img {
+  width: 90%;
+  height: auto;
+  border-radius: 1rem;
+  object-fit: cover;
+	display: block;
+	margin: 0 auto;
+}
+
+.bio h2 {
+  margin: 0 0 1rem;
+  font-size: 2.5rem;
+}
+
+.bio p {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+/* === Segundo container: espaço + imagem === */
+.space {
+  display: grid;
+  /* trocar 2fr 1fr por 1fr 1fr (50% / 50%) */
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.spaceInfo h2 {
+  margin: 0 0 1rem;
+  font-size: 2.5rem;
+}
+
+.spaceInfo p {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.spacePhoto img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 1024px) {
+  .profile,
+  .space {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .bio h2,
+  .spaceInfo h2 {
+    font-size: 2rem;
+  }
+  .bio p,
+  .spaceInfo p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .photo img,
+  .spacePhoto img {
+    width: 60%;
+    margin: 0 auto;  /* centraliza dentro do grid cell */
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 2rem;
+  }
+  .profile,
+  .space {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .bio h2,
+  .spaceInfo h2 {
+    font-size: 1.75rem;
+  }
+  .bio p,
+  .spaceInfo p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  .photo img,
+  .spacePhoto img {
+    width: 75%;
+    margin: 0 auto;       /* remove margem extra */
+  }
+}

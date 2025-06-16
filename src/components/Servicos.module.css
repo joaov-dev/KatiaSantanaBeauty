@@ -1,0 +1,147 @@
+/* Servicos.module.css */
+
+:root {
+  --header-height: 80px;   /* ajuste à altura real do seu header */
+  --gap: 2rem;
+}
+
+/* seção ocupa todo o viewport abaixo do header */
+.services {
+  height: calc(100vh - var(--header-height));
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+/* título acima do carrossel */
+.heading {
+  font-family: 'newsreader', serif;
+  font-size: 2.5rem;
+  text-align: center;
+	font-weight: 400;
+  margin: 1rem 0 2rem 0;
+}
+
+/* grid 10% | 80% | 10% */
+.carouselWrapper {
+  flex: 1;                  /* ocupa todo o espaço vertical restante */
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  align-items: center;
+  position: relative;
+}
+
+/* seta esquerda, sempre centralizada na sua coluna */
+.arrowLeft {
+  grid-column: 1;
+  justify-self: center;
+  align-self: center;
+  z-index: 2;
+  border: none;
+  background: rgba(255,255,255,0.8);
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* viewport central */
+.viewport {
+  grid-column: 2;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* linha de cards */
+.cardsContainer {
+  display: flex;
+  gap: var(--gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  height: 100%;
+  padding-bottom: 0.5rem;
+}
+/* esconder scrollbar */
+.cardsContainer::-webkit-scrollbar { display: none; }
+.cardsContainer { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* 3 cards no desktop, cada card preenche 100% da altura */
+.cardsContainer > * {
+  flex: 0 0 calc((100% - 2 * var(--gap)) / 3);
+  max-width: calc((100% - 2 * var(--gap)) / 3);
+  height: 100%;
+  scroll-snap-align: start;
+}
+
+/* seta direita, sempre centralizada na sua coluna */
+.arrowRight {
+  grid-column: 3;
+  justify-self: center;
+  align-self: center;
+  z-index: 2;
+  border: none;
+  background: rgba(255,255,255,0.8);
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* ===== Tablet (2 cards) ===== */
+@media (max-width: 1024px) {
+  .heading { font-size: 2rem; margin-bottom: 1rem; }
+  .cardsContainer > * {
+    flex: 0 0 calc((100% - var(--gap)) / 2);
+    max-width: calc((100% - var(--gap)) / 2);
+  }
+}
+
+/* ===== Mobile (1 card) ===== */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+	.viewport {
+    padding: 0 5%;
+    box-sizing: border-box;
+  }
+
+  .carouselWrapper {
+    grid-template-columns: 10% 80% 10%;
+  }
+
+  .cardsContainer > * {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin: 0;  /* garante que não haja gap lateral */
+  }
+
+  .services {
+    padding: 1rem 0.5rem;
+  }
+}
+
+/* cardService e info continuam iguais */
+.cardService {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.cardService img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.info {
+  position: absolute; bottom: 0; left: 0;
+  width: 100%; padding: 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  color: #fff;
+}
+.info h3 { margin: 0; font-size: 1.5rem; line-height: 1.2; }
+.info p  { margin: 0.5rem 0 0; font-size: 1rem; line-height: 1.4; }

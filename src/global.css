@@ -1,0 +1,29 @@
+:root {
+	--white: #ffffff;
+	--black: #000000;
+	--pink-200: #FDE6F5;
+	--pink-800: #F466CB;
+	--gray: #999999;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: var(--white);
+	color: var(--black);
+	-webkit-font-smoothing: antialiased;
+}
+
+body, input, textarea, button {
+	font-family: 'urbanist', sans-serif;
+	font-weight: 400;
+	font-size: 1rem;
+}
+
+:focus {
+	outline: transparent;
+}

@@ -1,0 +1,154 @@
+:root {
+  --gap-h: 2rem;
+  --gap-v: 1rem;
+}
+
+/* ================================
+   Desktop (>=1025px): 2 colunas
+   ================================ */
+.hero {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "cta banner";
+  align-items: center;
+  padding: 0 3rem;
+  gap: 2rem;
+  overflow: visible;
+
+  /* 1) aplica height fixo em desktop + tablet */
+  height: 55vh;
+}
+
+.cta {
+  grid-area: cta;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* centraliza texto+botões */
+  gap: var(--gap-v);          /* aproxima botões do texto */
+  height: 100%;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.title {
+  font-family: 'newsreader', sans-serif;
+  font-size: 3rem;
+  color: var(--pink-800);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.buttonWrapper {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.agendamento,
+.contato {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+  height: 35px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.agendamento {
+  background: var(--pink-800);
+  color: var(--white);
+}
+
+.contato {
+  background: var(--pink-200);
+  color: var(--black);
+}
+
+.banner {
+  grid-area: banner;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 0;         /* cria espaço acima/abaixo */
+}
+
+.banner img {
+  width: 90%;
+  height: auto;
+  border-radius: 1rem;
+  object-fit: contain;
+  object-position: top center;
+}
+
+/* -- tablet: só ajusta fontes/padding, *sem* mudar height -- */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 0 1.5rem;
+    gap: 1.5rem;
+    /* -- REMOVA height:auto daqui -- */
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+  .subtitle {
+    font-size: 1.5rem;
+  }
+  .banner img {
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+/* -- mobile: layout em 1 coluna e altura fluida -- */
+@media (max-width: 768px) {
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "cta"
+      "banner"
+      "button";
+    padding: 1rem;
+    gap: 1rem;
+
+    /* só aqui o Hero cresce com o conteúdo */
+    height: auto;
+  }
+  .cta {
+    align-items: center;
+    text-align: center;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .subtitle {
+    font-size: 1.25rem;
+  }
+  .banner {
+    padding: 0;
+    margin-top: 1rem;
+  }
+  .banner img {
+    width: 90%;
+    object-fit: cover;
+    height: auto;
+  }
+  .buttonWrapper {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
