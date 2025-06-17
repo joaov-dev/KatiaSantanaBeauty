@@ -1,96 +1,102 @@
-/* 1) Wrapper e título */
+/* src/components/CursosDescription.module.css */
+
+/* wrapper geral */
 .wrapper {
   padding: 2rem 1rem;
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
   box-sizing: border-box;
 }
+
+/* título fixo no topo */
 .heading {
   font-family: 'newsreader', serif;
   font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 2rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
 }
 
-/* 2) Duas colunas: imagem (1fr) + texto (2fr) */
-.content {
+/* cartão principal com height maior */
+.card {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1.5fr;
   gap: 2rem;
-  align-items: start;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  height: 70vh; /* ocupa 70% da altura da viewport */
+  align-items: stretch;
 }
 
-/* 3) Caixa da imagem */
+/* imagem do curso */
 .imageBox img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  border-radius: 1rem;
   display: block;
 }
 
-/* 4) Caixa de texto com espaçamento */
+/* área de texto e botão */
 .textBox {
   display: flex;
   flex-direction: column;
+  padding: 2rem;
 }
+
+/* novo estilo para o nome do curso dentro do card */
 .title {
   margin: 0 0 1rem;
-  font-size: 2rem;
+  font-size: 1.75rem;
+  font-weight: 600;
 }
+
+/* descrição do curso */
 .description {
   flex: 1;
   line-height: 1.6;
-  margin-bottom: 2rem;
+  color: var(--gray-800);
+  margin-bottom: 1.5rem;
+  overflow-y: auto;
 }
 
-/* 5) Botão “Tenho interesse” */
-.buttons {
-  display: flex;
-}
+/* botão “Tenho interesse” */
 .interest {
+  align-self: flex-start;
   background: var(--pink-800);
   color: #fff;
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
   text-decoration: none;
   font-weight: 600;
+  transition: background 0.2s;
 }
 
-/* ===== Responsividade ===== */
-
-/* Tablets (≤1024px): empilha colunas */
+/* responsividade */
 @media (max-width: 1024px) {
-  .content {
+  .card {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    height: auto; /* altura automática em telas médias */
   }
-  .title {
-    font-size: 1.75rem;
-  }
-  .description {
-    margin-bottom: 1.5rem;
-  }
-}
-
-/* Mobile (≤768px): ajustes finos */
-@media (max-width: 768px) {
   .wrapper {
     padding: 1.5rem 1rem;
   }
   .heading {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
   }
-  .title {
+}
+
+@media (max-width: 768px) {
+  .heading {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
   }
-  .description {
-    margin-bottom: 1rem;
+  .textBox {
+    padding: 1.5rem;
   }
   .interest {
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
   }
 }

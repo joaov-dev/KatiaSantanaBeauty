@@ -18,8 +18,7 @@ export function About() {
         <div className={styles.bio}>
           <h2>Katia Santana</h2>
           <p>
-            Com mais de 10 anos de experiência no mercado de beleza, Katia
-            Santana é especialista em realçar a beleza única de cada cliente.
+            Katia Santana é especialista em realçar a beleza única de cada cliente.
             Empreendedora nata, ela fundou o KatiaSantanaBeauty para oferecer
             tratamentos de ponta, aliando técnicas modernas com um atendimento
             acolhedor e personalizado. Seu compromisso é fazer com que cada
@@ -32,11 +31,7 @@ export function About() {
         <div className={styles.spaceInfo}>
           <h2>Nosso espaço</h2>
           <p>
-            Localizado no coração da cidade, nosso salão foi projetado para
-            oferecer conforto e privacidade. Com ambientes climatizados,
-            iluminação natural, estações equipadas e um lounge para espera
-            relaxante, garantimos uma experiência completa. Venha nos visitar
-            na Rua das Flores, 123 – Centro, e descubra um novo conceito em beleza.
+            Localizado no coração do Sacomã, na Rua Alencar Araripe, 1258, o Katia Santana Beauty foi planejado para oferecer conforto, privacidade e bem-estar desde o primeiro instante. Nossos ambientes são climatizados e contam com amplas janelas que garantem iluminação natural durante todo o dia. Cada estação de atendimento está equipada com mobiliário ergonômico e materiais de última geração, proporcionando praticidade e higiene máxima.
           </p>
         </div>
         <div className={styles.spacePhoto}>

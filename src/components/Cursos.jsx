@@ -3,39 +3,67 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Cursos.module.css'
 
-// imagens de exemplo
-import dermaplaningImg   from '../assets/esmaltacao.png'
-import browDesignImg     from '../assets/salao.png'
-import massageImg        from '../assets/makeup.png'
-import makeupMasterImg   from '../assets/makeupGlam.png'
+import automaquiagem   from '../assets/cursosImg/automaquiagem.png'
+import maquiagemProfissional   from '../assets/cursosImg/maquiagemProfissional.png'
+import alongamentoCilios   from '../assets/cursosImg/alongamentoCilios.png'
+import alongamentoCilios2   from '../assets/cursosImg/alogamentoCilios2.png'
+import micropigmentacao   from '../assets/cursosImg/micropigmentacao.png'
+import micropigmentacao2   from '../assets/cursosImg/micropigmentacao2.png'
+import manicure   from '../assets/cursosImg/manicure.png'
+import alongamento  from '../assets/cursosImg/alongamento.png'
+
 
 export function Cursos() {
   const cursos = [
     {
-      id: 'dermaplaning',
-      src: dermaplaningImg,
-      title: 'Dermaplaning',
-      desc: 'Descubra a técnica que remove células mortas e pelos finos, revelando uma pele lisa e radiante.'
+      id: 'automaquiagem',
+      src: automaquiagem,
+      title: 'Automaquiagem',
+      desc: 'Descubra como realçar sua beleza com técnicas profissionais aplicadas por você mesma!'
     },
     {
-      id: 'design-sobrancelhas',
-      src: browDesignImg,
-      title: 'Design de Sobrancelhas',
-      desc: 'Aprenda modelagem e micropigmentação para sobrancelhas perfeitas e harmônicas ao rosto.'
+      id: 'maquiagemProfissional',
+      src: maquiagemProfissional,
+      title: 'Maquiagem Profissional',
+      desc: 'Transforme sua paixão por maquiagem em uma carreira! Este curso é voltado para quem deseja atuar como maquiador(a) profissional ou se especializar ainda mais.'
     },
     {
-      id: 'massoterapia',
-      src: massageImg,
-      title: 'Massoterapia',
-      desc: 'Técnicas de massagem relaxante e terapêutica para bem-estar físico e mental.'
+      id: 'alongamentoCiliosIniciante',
+      src: alongamentoCilios,
+      title: 'Alongamento de Cílios Iniciante',
+      desc: 'Ideal para quem está entrando no universo do embelezamento do olhar.'
     },
     {
-      id: 'makeup-masterclass',
-      src: makeupMasterImg,
-      title: 'Makeup Masterclass',
-      desc: 'Domine desde a preparação da pele até maquiagens sofisticadas para todas as ocasiões.'
+      id: 'alongamentoCiliosAvancado',
+      src: alongamentoCilios2,
+      title: 'Alongamento de Cílios Avançado',
+      desc: 'Aperfeiçoe suas habilidades e domine técnicas mais sofisticadas! Indicado para profissionais que já trabalham com extensão de cílios.'
     },
-    // ...adicione mais cursos conforme necessário
+    {
+      id: 'micropigmentacaoIniciante',
+      src: micropigmentacao,
+      title: 'Micropigmentação Iniciante',
+      desc: 'Entre para o mundo da beleza com uma das técnicas mais requisitadas do mercado. Este curso é perfeito para iniciantes que desejam começar uma nova profissão.'
+    },
+    {
+      id: 'micropigmentacaoAvancado',
+      src: micropigmentacao2,
+      title: 'Micropigmentação Avançado',
+      desc: 'Indicado para profissionais que desejam evoluir nas técnicas e oferecer serviços ainda mais personalizados.'
+    },
+    {
+      id: 'manicureTradicional',
+      src: manicure,
+      title: 'Manicure Tradicional',
+      desc: 'Comece sua carreira com uma formação completa em manicure tradicional. Indicado para iniciantes ou quem deseja profissionalizar seu atendimento.'
+    },
+    {
+      id: 'alongamentoUnhas',
+      src: alongamento,
+      title: 'Alongamento de Unhas',
+      desc: 'Comece sua carreira com uma formação completa em manicure tradicional. Indicado para iniciantes ou quem deseja profissionalizar seu atendimento.'
+    },
+    
   ]
 
   return (
